@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Black Light Results — Websites die Kunden bringen</title>
+  <meta name="description" content="AI-gestütztes Webdesign für kleine Unternehmen. Professionelle Website in 1-2 Wochen. Mehr Kunden, weniger Aufwand.">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Google Fonts: Outfit (headings) + DM Sans (body) with font-display swap -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Phosphor Icons — duotone style for the UV/glow aesthetic -->
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ====================================================================
+       NAVIGATION
+       ==================================================================== -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon"><i class="ph-duotone ph-code"></i></span>
+        Black Light Results
+      </a>
+      <ul class="nav-links">
+        <li><a href="#problem">Problem</a></li>
+        <li><a href="#solution">Lösung</a></li>
+        <li><a href="#process">Ablauf</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="contact.html" class="btn btn-primary nav-cta">Projekt starten</a></li>
+      </ul>
+      <!-- Mobile hamburger (animates to X via CSS + JS) -->
+      <button class="nav-hamburger" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu overlay -->
+  <div class="mobile-menu">
+    <a href="#problem">Problem</a>
+    <a href="#solution">Lösung</a>
+    <a href="#process">Ablauf</a>
+    <a href="#faq">FAQ</a>
+    <a href="contact.html">Projekt starten</a>
+  </div>
+
+
+  <!-- ====================================================================
+       HERO SECTION
+       The first thing visitors see. Clear value proposition + CTA.
+       ==================================================================== -->
+  <section class="hero section">
+    <!-- Background grid effect (parallax via JS) -->
+    <div class="hero-grid"></div>
+    <!-- Floating geometric decoration -->
+    <div class="hero-shape"></div>
+    <!-- UV glow orbs with floating animation -->
+    <div class="uv-orb" style="width:600px;height:600px;background:var(--glow);top:-200px;right:-200px;"></div>
+    <div class="uv-orb" style="width:400px;height:400px;background:var(--glow-cyan);bottom:-100px;left:-100px;"></div>
+
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          AI-gestütztes Webdesign
+        </div>
+
+        <h1>Deine Website verliert jeden Tag <span class="glow-text">Kunden.</span></h1>
+
+        <p class="hero-sub">
+          Wir bauen dir in 1 Woche eine Website, die verkauft — nicht nur gut aussieht. Mit AI-gestütztem Webdesign und Fokus auf Marketing statt Design-Spielereien.
+        </p>
+
+        <div class="hero-ctas">
+          <a href="contact.html" class="btn btn-primary">
+            Kostenlos beraten lassen
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#process" class="btn btn-outline">So funktioniert's</a>
+        </div>
+
+        <!-- Trust indicators -->
+        <div class="trust-bar">
+          <div class="trust-item">
+            <div class="trust-number">1</div>
+            <div class="trust-label">Woche Lieferzeit</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-number">100%</div>
+            <div class="trust-label">Conversion-Fokus</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-number">0 €</div>
+            <div class="trust-label">Erstberatung</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====================================================================
+       PROBLEM SECTION
+       Show the visitor their pain points so they feel understood.
+       ==================================================================== -->
+  <section id="problem" class="section">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">Das Problem</span>
+        <h2 class="section-title">Ohne professionelle Website <br>verlierst du <span class="accent-underline">Geld. Jeden Tag.</span></h2>
+        <p class="section-subtitle mx-auto">
+          Deine Konkurrenz ist online. Deine Kunden suchen bei Google. Und was finden sie bei dir?
+        </p>
+      </div>
+
+      <!-- stagger-children makes cards animate in one after another -->
+      <div class="problem-grid stagger-children">
+        <!-- Problem Card 1 -->
+        <div class="problem-card reveal">
+          <div class="card-icon"><i class="ph-duotone ph-magnifying-glass"></i></div>
+          <h3>Unsichtbar bei Google</h3>
+          <p>Kein Ranking, keine Besucher, keine Anfragen. Ohne professionelle Website existierst du für potenzielle Kunden schlicht nicht.</p>
+        </div>
+        <!-- Problem Card 2 -->
+        <div class="problem-card reveal">
+          <div class="card-icon"><i class="ph-duotone ph-currency-circle-dollar"></i></div>
+          <h3>Verlorene Aufträge</h3>
+          <p>Besucher kommen auf deine Seite — und gehen sofort wieder. Eine unprofessionelle Website kostet dich jeden Monat bares Geld.</p>
+        </div>
+        <!-- Problem Card 3 -->
+        <div class="problem-card reveal">
+          <div class="card-icon"><i class="ph-duotone ph-shield-warning"></i></div>
+          <h3>Kein Vertrauen</h3>
+          <p>Kunden entscheiden in 3 Sekunden, ob sie dir vertrauen. Eine veraltete Website sagt: "Diesem Unternehmen ist es egal."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====================================================================
+       AGITATION SECTION
+       Make the problem feel more urgent with data and specifics.
+       ==================================================================== -->
+  <section class="agitation section">
+    <div class="uv-orb" style="width:500px;height:500px;background:var(--glow);top:50%;left:-200px;transform:translateY(-50%);"></div>
+    <div class="container">
+      <div class="agitation-content">
+        <!-- Stats that make it real -->
+        <div class="agitation-stats stagger-children">
+          <div class="stat-card reveal">
+            <div class="stat-number">75%</div>
+            <div class="stat-label">beurteilen Glaubwürdigkeit anhand des Webdesigns</div>
+          </div>
+          <div class="stat-card reveal">
+            <div class="stat-number">88%</div>
+            <div class="stat-label">kommen nach schlechter Erfahrung nicht zurück</div>
+          </div>
+          <div class="stat-card reveal">
+            <div class="stat-number">3 Sek.</div>
+            <div class="stat-label">bis ein Besucher entscheidet zu bleiben oder zu gehen</div>
+          </div>
+          <div class="stat-card reveal">
+            <div class="stat-number">53%</div>
+            <div class="stat-label">verlassen Seiten die länger als 3 Sek. laden</div>
+          </div>
+        </div>
+
+        <!-- Text content -->
+        <div class="agitation-text reveal">
+          <span class="section-label">Es wird schlimmer</span>
+          <h2>Das Problem ist <span class="accent-underline">größer</span> als du denkst</h2>
+          <p>Jeder Tag ohne funktionierende Website ist ein Tag, an dem deine Konkurrenz die Kunden bekommt, die eigentlich deine wären.</p>
+          <ul class="agitation-list">
+            <li><span class="x-icon">✕</span> Potenzielle Kunden finden dich nicht bei Google</li>
+            <li><span class="x-icon">✕</span> Wer dich findet, vertraut dir nicht</li>
+            <li><span class="x-icon">✕</span> Wer anfragen will, weiß nicht wie</li>
+            <li><span class="x-icon">✕</span> Dein bestes Marketing verpufft, wenn die Website nicht konvertiert</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====================================================================
+       COMPARISON SECTION
+       Why the alternatives don't work — positions our solution as the best.
+       ==================================================================== -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">Vergleich</span>
+        <h2 class="section-title">Warum die üblichen Wege<br> <span class="accent-underline">nicht funktionieren</span></h2>
+        <p class="section-subtitle mx-auto">Du hast Optionen. Aber nicht alle bringen Ergebnisse.</p>
+      </div>
+
+      <div class="comparison-table reveal">
+        <!-- DIY / Baukästen -->
+        <div class="comparison-col">
+          <h3>DIY-Baukasten</h3>
+          <div class="comparison-row"><span class="cross">✕</span> Sieht generisch aus</div>
+          <div class="comparison-row"><span class="cross">✕</span> Keine Conversion-Optimierung</div>
+          <div class="comparison-row"><span class="meh">~</span> Günstig, aber Zeitfresser</div>
+          <div class="comparison-row"><span class="cross">✕</span> Kein Support</div>
+          <div class="comparison-row"><span class="cross">✕</span> Wochen Einarbeitung</div>
+        </div>
+
+        <!-- Traditionelle Agentur -->
+        <div class="comparison-col">
+          <h3>Klassische Agentur</h3>
+          <div class="comparison-row"><span class="check">✓</span> Professionelles Design</div>
+          <div class="comparison-row"><span class="meh">~</span> Mal so, mal so bei Conversion</div>
+          <div class="comparison-row"><span class="cross">✕</span> 10.000 €+ Budget nötig</div>
+          <div class="comparison-row"><span class="cross">✕</span> 3–6 Monate Wartezeit</div>
+          <div class="comparison-row"><span class="meh">~</span> Abhängigkeit von der Agentur</div>
+        </div>
+
+        <!-- Freelancer -->
+        <div class="comparison-col">
+          <h3>Freelancer</h3>
+          <div class="comparison-row"><span class="meh">~</span> Qualität schwankt stark</div>
+          <div class="comparison-row"><span class="cross">✕</span> Oft kein Marketing-Know-how</div>
+          <div class="comparison-row"><span class="meh">~</span> Mittelpreisig</div>
+          <div class="comparison-row"><span class="meh">~</span> Zeitplan oft unzuverlässig</div>
+          <div class="comparison-row"><span class="cross">✕</span> Fällt aus = Projekt steht</div>
+        </div>
+
+        <!-- Black Light Results (highlighted + recommended badge) -->
+        <div class="comparison-col highlighted">
+          <span class="comparison-badge">Empfohlen</span>
+          <h3>Black Light Results</h3>
+          <div class="comparison-row"><span class="check">✓</span> Premium-Design</div>
+          <div class="comparison-row"><span class="check">✓</span> 100% Conversion-Fokus</div>
+          <div class="comparison-row"><span class="check">✓</span> Faire, transparente Preise</div>
+          <div class="comparison-row"><span class="check">✓</span> Fertig in 1 Woche</div>
+          <div class="comparison-row"><span class="check">✓</span> Marketing + Design + AI</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====================================================================
+       SOLUTION SECTION
+       Present our offer as the clear answer to their problem.
+       ==================================================================== -->
+  <section id="solution" class="solution section">
+    <div class="uv-orb" style="width:500px;height:500px;background:var(--glow-cyan);top:-150px;right:-100px;"></div>
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">Unsere Lösung</span>
+        <h2 class="section-title">AI-gestütztes Webdesign.<br> <span class="glow-text">Schnell. Effektiv. Bezahlbar.</span></h2>
+        <p class="section-subtitle mx-auto">Wir verbinden künstliche Intelligenz mit Marketing-Expertise. Das Ergebnis: professionelle Websites in Rekordzeit — die tatsächlich Kunden bringen.</p>
+      </div>
+
+      <div class="solution-grid stagger-children">
+        <!-- Benefit 1 -->
+        <div class="solution-card reveal">
+          <div class="card-icon"><i class="ph-duotone ph-lightning"></i></div>
+          <h3>Fertig in 1 Woche</h3>
+          <p>Dank AI-gestützter Prozesse liefern wir in Tagen, wofür andere Monate brauchen. Kein ewiges Warten, kein Frust.</p>
+        </div>
+        <!-- Benefit 2 -->
+        <div class="solution-card reveal">
+          <div class="card-icon"><i class="ph-duotone ph-crosshair"></i></div>
+          <h3>Gebaut um zu verkaufen</h3>
+          <p>Jedes Element hat einen Zweck. Wir designen nicht nach Geschmack, sondern nach dem, was nachweislich Kunden bringt.</p>
+        </div>
+        <!-- Benefit 3 -->
+        <div class="solution-card reveal">
+          <div class="card-icon"><i class="ph-duotone ph-chart-line-up"></i></div>
+          <h3>Marketing im Fokus</h3>
+          <p>Während andere an Pixeln feilen, optimieren wir deine Conversion Rate, deine Texte und deine Sichtbarkeit.</p>
+        </div>
+        <!-- Benefit 4 -->
+        <div class="solution-card reveal">
+          <div class="card-icon"><i class="ph-duotone ph-robot"></i></div>
+          <h3>AI als Beschleuniger</h3>
+          <p>Wir nutzen AI für Design, Code und Content — so sparst du Zeit und Geld, ohne auf Qualität zu verzichten.</p>
+        </div>
+        <!-- Benefit 5 -->
+        <div class="solution-card reveal">
+          <div class="card-icon"><i class="ph-duotone ph-wrench"></i></div>
+          <h3>Technik, die funktioniert</h3>
+          <p>Schnelle Ladezeiten, mobiloptimiert, SEO-ready. Keine aufgeblähten Systeme, sondern schlanke Technik.</p>
+        </div>
+        <!-- Benefit 6 -->
+        <div class="solution-card reveal">
+          <div class="card-icon"><i class="ph-duotone ph-handshake"></i></div>
+          <h3>Persönliche Betreuung</h3>
+          <p>Kein Ticket-System, keine Warteschleife. Du hast einen direkten Ansprechpartner der dein Projekt kennt.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====================================================================
+       PROCESS SECTION
+       Show how easy it is to work with us — reduce friction.
+       ==================================================================== -->
+  <section id="process" class="section">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">So funktioniert's</span>
+        <h2 class="section-title">In 3 Schritten zu deiner<br> <span class="glow-text">neuen Website</span></h2>
+        <p class="section-subtitle mx-auto">Kein komplizierter Prozess. Kein Fachchinesisch. Einfach Ergebnisse.</p>
+      </div>
+
+      <div class="process-steps stagger-children">
+        <!-- Step 1 -->
+        <div class="step reveal">
+          <div class="step-number">1</div>
+          <h3>Kostenloses Erstgespräch</h3>
+          <p>Du erzählst uns von deinem Business. Wir analysieren deine aktuelle Situation und zeigen dir, wo das größte Potenzial liegt.</p>
+        </div>
+        <!-- Step 2 -->
+        <div class="step reveal">
+          <div class="step-number">2</div>
+          <h3>Wir bauen deine Website</h3>
+          <p>In 1 Woche erstellen wir deine conversion-optimierte Website. Du bekommst regelmäßige Updates und kannst Feedback geben.</p>
+        </div>
+        <!-- Step 3 -->
+        <div class="step reveal">
+          <div class="step-number">3</div>
+          <h3>Launch & Wachstum</h3>
+          <p>Deine Website geht live und beginnt sofort, Kunden für dich zu gewinnen. Bei Bedarf optimieren wir weiter.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====================================================================
+       TESTIMONIALS / SOCIAL PROOF
+       Build trust through the words of others.
+       ==================================================================== -->
+  <section class="testimonials section">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">Kundenstimmen</span>
+        <h2 class="section-title">Das sagen unsere Kunden</h2>
+      </div>
+
+      <div class="testimonial-grid stagger-children">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card reveal">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Innerhalb von 10 Tagen hatten wir eine Website, die besser aussieht und besser performt als alles, was wir vorher hatten. Die Anfragen haben sich verdoppelt."</blockquote>
+          <div class="testimonial-author">
+            <div class="avatar">MK</div>
+            <div>
+              <div class="name">Markus K.</div>
+              <div class="role">Geschäftsführer, Handwerksbetrieb</div>
+            </div>
+          </div>
+        </div>
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card reveal">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Wir haben vorher 4 Monate auf unsere Agentur gewartet. Bei Black Light Results war nach 2 Wochen alles fertig — und es konvertiert deutlich besser."</blockquote>
+          <div class="testimonial-author">
+            <div class="avatar">SL</div>
+            <div>
+              <div class="name">Sandra L.</div>
+              <div class="role">Inhaberin, Kosmetikstudio</div>
+            </div>
+          </div>
+        </div>
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card reveal">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Endlich jemand, der versteht, dass eine Website Kunden bringen muss — nicht nur hübsch sein. Die Zusammenarbeit war unkompliziert und professionell."</blockquote>
+          <div class="testimonial-author">
+            <div class="avatar">TW</div>
+            <div>
+              <div class="name">Thomas W.</div>
+              <div class="role">Steuerberater</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====================================================================
+       FAQ SECTION
+       Handle objections before they become reasons not to buy.
+       FAQ answers wrapped in <div> for smooth grid-based height animation.
+       ==================================================================== -->
+  <section id="faq" class="section">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">Häufige Fragen</span>
+        <h2 class="section-title">Noch unsicher? <span class="glow-text">Hier sind Antworten.</span></h2>
+      </div>
+
+      <div class="faq-list">
+        <!-- FAQ 1 -->
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            Was kostet eine Website bei euch?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div>
+              <p>Das hängt vom Umfang ab. Wir bieten transparente Festpreise — keine versteckten Kosten. Im kostenlosen Erstgespräch bekommst du ein konkretes Angebot. Unsere Preise liegen deutlich unter denen klassischer Agenturen, weil wir durch AI effizienter arbeiten.</p>
+            </div>
+          </div>
+        </div>
+        <!-- FAQ 2 -->
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            Wie kann das in 1–2 Wochen fertig sein?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div>
+              <p>Wir nutzen AI-gestützte Prozesse für Design, Code-Generierung und Content-Erstellung. Das beschleunigt jeden Schritt enorm. Dazu kommen bewährte Templates und ein strukturierter Ablauf — ohne unnötige Abstimmungsschleifen.</p>
+            </div>
+          </div>
+        </div>
+        <!-- FAQ 3 -->
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            Sieht eine AI-erstellte Website nicht generisch aus?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div>
+              <p>Nein. AI ist unser Werkzeug, nicht unser Designer. Jede Website wird individuell für dein Business angepasst. Wir nutzen AI, um schneller zu arbeiten — nicht um Copy-Paste-Seiten zu produzieren. Das Ergebnis ist maßgeschneidert.</p>
+            </div>
+          </div>
+        </div>
+        <!-- FAQ 4 -->
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            Muss ich technische Vorkenntnisse haben?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div>
+              <p>Absolut nicht. Wir kümmern uns um alles Technische. Du musst nur wissen, was dein Business ausmacht — den Rest übernehmen wir. Und wir erklären dir alles so, dass du es verstehst.</p>
+            </div>
+          </div>
+        </div>
+        <!-- FAQ 5 -->
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            Was passiert nach dem Launch?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div>
+              <p>Wir lassen dich nicht allein. Nach dem Launch bieten wir Support und auf Wunsch laufende Optimierung. Du kannst uns jederzeit kontaktieren, wenn du Änderungen oder Erweiterungen brauchst.</p>
+            </div>
+          </div>
+        </div>
+        <!-- FAQ 6 -->
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            Was wenn mir das Ergebnis nicht gefällt?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div>
+              <p>Du bist in jedem Schritt eingebunden und kannst Feedback geben. Wir arbeiten so lange an Anpassungen, bis du zufrieden bist. Deine Zufriedenheit ist für uns nicht optional.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====================================================================
+       FINAL CTA SECTION
+       Last push — make the next step feel easy and risk-free.
+       ==================================================================== -->
+  <section class="final-cta section">
+    <div class="uv-orb" style="width:700px;height:700px;background:var(--glow);top:50%;left:50%;transform:translate(-50%,-50%);"></div>
+    <div class="container">
+      <div class="final-cta-box reveal">
+        <span class="section-label">Bereit?</span>
+        <h2>Lass uns deine Website bauen.<br> <span class="glow-text">In 1 Woche live.</span></h2>
+        <p class="section-subtitle mx-auto">Kostenlose Erstberatung. Kein Risiko. Kein Kleingedrucktes. Einfach ein Gespräch darüber, wie wir dir helfen können.</p>
+        <a href="contact.html" class="btn btn-primary">
+          Jetzt kostenlos beraten lassen
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====================================================================
+       FOOTER
+       ==================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <span class="logo-icon"><i class="ph-duotone ph-code"></i></span>
+            Black Light Results
+          </a>
+          <p>AI-gestütztes Webdesign für kleine Unternehmen. Schnell, effektiv, bezahlbar.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#problem">Problem</a></li>
+            <li><a href="#solution">Lösung</a></li>
+            <li><a href="#process">Ablauf</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Rechtliches</h4>
+          <ul>
+            <li><a href="imprint.html">Impressum</a></li>
+            <li><a href="privacy.html">Datenschutz</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Black Light Results. Alle Rechte vorbehalten.</span>
+        <div class="footer-bottom-links">
+          <a href="imprint.html">Impressum</a>
+          <a href="privacy.html">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button class="back-to-top" aria-label="Nach oben scrollen">↑</button>
+
+  <script src="main.js"></script>
+</body>
+</html>

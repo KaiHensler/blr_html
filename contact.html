@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt — Black Light Results</title>
+  <meta name="description" content="Starte dein Projekt mit Black Light Results. Kostenlose Erstberatung für deine neue Website.">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ====================================================================
+       NAVIGATION
+       ==================================================================== -->
+  <nav class="nav scrolled">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon"><i class="ph-duotone ph-code"></i></span>
+        Black Light Results
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Startseite</a></li>
+        <li><a href="index.html#solution">Lösung</a></li>
+        <li><a href="index.html#process">Ablauf</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="contact.html" class="btn btn-primary nav-cta">Projekt starten</a></li>
+      </ul>
+      <button class="nav-hamburger" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu">
+    <a href="index.html">Startseite</a>
+    <a href="index.html#solution">Lösung</a>
+    <a href="index.html#process">Ablauf</a>
+    <a href="index.html#faq">FAQ</a>
+  </div>
+
+
+  <!-- ====================================================================
+       CONTACT SECTION
+       ==================================================================== -->
+  <section class="contact-section section">
+    <div class="uv-orb" style="width:500px;height:500px;background:var(--glow);top:10%;left:-200px;"></div>
+    <div class="container">
+
+      <div class="text-center reveal">
+        <span class="section-label">Kontakt</span>
+        <h1 class="section-title">Lass uns über dein<br> <span class="glow-text">Projekt sprechen.</span></h1>
+        <p class="section-subtitle mx-auto">Füll das Formular aus und wir melden uns innerhalb von 24 Stunden bei dir. Kostenlos und unverbindlich.</p>
+      </div>
+
+      <div class="contact-form-wrapper">
+        <!-- Contact form with inline validation -->
+        <form id="contact-form" class="contact-form reveal" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name *</label>
+              <input type="text" id="name" name="name" placeholder="Dein vollständiger Name" required>
+              <span class="error-msg">Bitte gib deinen Namen ein.</span>
+            </div>
+            <div class="form-group">
+              <label for="company">Unternehmen</label>
+              <input type="text" id="company" name="company" placeholder="Dein Unternehmen">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">E-Mail *</label>
+              <input type="email" id="email" name="email" placeholder="deine@email.de" required>
+              <span class="error-msg">Bitte gib eine gültige E-Mail ein.</span>
+            </div>
+            <div class="form-group">
+              <label for="phone">Telefon</label>
+              <input type="tel" id="phone" name="phone" placeholder="+49 123 456 7890">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="project-type">Projektart</label>
+            <select id="project-type" name="project-type">
+              <option value="" disabled selected>Was brauchst du?</option>
+              <option value="new-website">Neue Website</option>
+              <option value="redesign">Website-Redesign</option>
+              <option value="landing-page">Landing Page</option>
+              <option value="online-shop">Online-Shop</option>
+              <option value="marketing">Online-Marketing</option>
+              <option value="ai-automation">AI-Automatisierung</option>
+              <option value="other">Sonstiges</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Nachricht *</label>
+            <textarea id="message" name="message" placeholder="Erzähl uns kurz von deinem Projekt — was brauchst du, was ist dein Ziel?" required></textarea>
+            <span class="error-msg">Bitte schreib uns mindestens ein paar Sätze.</span>
+          </div>
+
+          <button type="submit" class="btn btn-primary form-submit">
+            Nachricht senden
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+
+          <p class="form-notice">
+            Mit dem Absenden stimmst du unserer <a href="privacy.html">Datenschutzerklärung</a> zu.
+          </p>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ====================================================================
+       FOOTER
+       ==================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <span class="logo-icon"><i class="ph-duotone ph-code"></i></span>
+            Black Light Results
+          </a>
+          <p>AI-gestütztes Webdesign für kleine Unternehmen. Schnell, effektiv, bezahlbar.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Startseite</a></li>
+            <li><a href="index.html#solution">Lösung</a></li>
+            <li><a href="index.html#process">Ablauf</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Rechtliches</h4>
+          <ul>
+            <li><a href="imprint.html">Impressum</a></li>
+            <li><a href="privacy.html">Datenschutz</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Black Light Results. Alle Rechte vorbehalten.</span>
+        <div class="footer-bottom-links">
+          <a href="imprint.html">Impressum</a>
+          <a href="privacy.html">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button class="back-to-top" aria-label="Nach oben scrollen">↑</button>
+
+  <script src="main.js"></script>
+</body>
+</html>
