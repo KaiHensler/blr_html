@@ -48,6 +48,19 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Black bar extending into status bar area for Safari */
+html::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: var(--bg-deep);
+  z-index: 999;
+  pointer-events: none;
+}
+
 body {
   font-family: 'DM Sans', system-ui, sans-serif;
   background: var(--bg-deep);
@@ -304,29 +317,15 @@ a:hover { color: #fff; }
   top: 0;
   left: 0;
   width: 100%;
-  height: calc(var(--nav-height) + env(safe-area-inset-top));
+  height: var(--nav-height);
   z-index: 1000;
   transition: background 0.3s, box-shadow 0.3s;
   background: var(--bg-deep);
-  padding-top: env(safe-area-inset-top);
-}
-
-/* Black area above navbar for Safari scrolling */
-.nav::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: env(safe-area-inset-top);
-  background: var(--bg-deep);
-  z-index: -1;
-  pointer-events: none;
 }
 
 /* Glowing accent line at bottom when scrolled */
 .nav.scrolled {
-  background: rgba(6, 6, 12, 0.85);
+  background: rgba(6, 6, 12, 0.95);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   box-shadow: 0 1px 0 rgba(124, 92, 252, 0.15);
@@ -543,7 +542,7 @@ body {
   display: flex;
   align-items: center;
   position: relative;
-  padding-top: calc(var(--nav-height) + env(safe-area-inset-top));
+  padding-top: var(--nav-height);
   overflow: hidden;
 }
 
