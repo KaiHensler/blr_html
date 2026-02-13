@@ -304,9 +304,24 @@ a:hover { color: #fff; }
   top: 0;
   left: 0;
   width: 100%;
-  height: var(--nav-height);
+  height: calc(var(--nav-height) + env(safe-area-inset-top));
   z-index: 1000;
   transition: background 0.3s, box-shadow 0.3s;
+  background: var(--bg-deep);
+  padding-top: env(safe-area-inset-top);
+}
+
+/* Black area above navbar for Safari scrolling */
+.nav::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: env(safe-area-inset-top);
+  background: var(--bg-deep);
+  z-index: -1;
+  pointer-events: none;
 }
 
 /* Glowing accent line at bottom when scrolled */
@@ -528,7 +543,7 @@ body {
   display: flex;
   align-items: center;
   position: relative;
-  padding-top: var(--nav-height);
+  padding-top: calc(var(--nav-height) + env(safe-area-inset-top));
   overflow: hidden;
 }
 
