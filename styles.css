@@ -229,28 +229,30 @@ a:hover { color: #fff; }
 }
 
 
-/* --- Phosphor Icon Sizing ---
-   Icons inside .card-icon and .detail-icon inherit size from font-size.
-   Duotone secondary color uses the accent for UV glow feel. */
-.card-icon i,
-.detail-icon i {
-  font-size: 1.5rem;
-  line-height: 1;
+/* --- Icon Sizing (inline SVGs) --- */
+.card-icon svg,
+.detail-icon svg {
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
-/* Phosphor duotone colors — primary stroke + secondary fill */
-.card-icon i {
+.card-icon svg {
   color: var(--accent-bright);
-  --ph-duotone-opacity: 0.3;
 }
 
-.problem-card .card-icon i {
+.problem-card .card-icon svg {
   color: #ff8a80;
 }
 
-.detail-icon i {
+.detail-icon svg {
   color: var(--accent-bright);
-  font-size: 1.3rem;
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+.nav-logo .logo-icon svg {
+  width: 1.3rem;
+  height: 1.3rem;
 }
 
 /* --- Buttons --- */
@@ -363,13 +365,8 @@ a:hover { color: #fff; }
   color: #fff;
 }
 
-.nav-logo .logo-icon i {
-  font-size: 1.3rem;
-  line-height: 1;
-  background: linear-gradient(135deg, var(--accent), var(--glow-cyan));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.nav-logo .logo-icon svg {
+  display: block;
 }
 
 /* Desktop nav links */
