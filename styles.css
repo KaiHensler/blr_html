@@ -46,7 +46,9 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  scroll-padding-top: 72px;
+  overflow-x: hidden;
+  width: 100%;
+  touch-action: pan-y;
 }
 
 body {
@@ -55,7 +57,9 @@ body {
   color: var(--text);
   line-height: 1.7;
   overflow-x: hidden;
-  padding-top: 72px;
+  width: 100%;
+  max-width: 100vw;
+  touch-action: pan-y;
 }
 
 /* --- Noise / Grain Texture Overlay ---
@@ -309,12 +313,11 @@ a:hover { color: #fff; }
   height: var(--nav-height);
   z-index: 1000;
   transition: background 0.3s, box-shadow 0.3s;
-  background: var(--bg-deep);
 }
 
 /* Glowing accent line at bottom when scrolled */
 .nav.scrolled {
-  background: rgba(6, 6, 12, 0.95);
+  background: rgba(6, 6, 12, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   box-shadow: 0 1px 0 rgba(124, 92, 252, 0.15);
@@ -531,6 +534,7 @@ body {
   display: flex;
   align-items: center;
   position: relative;
+  padding-top: var(--nav-height);
   overflow: hidden;
 }
 
