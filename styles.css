@@ -46,19 +46,7 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-/* Black bar extending into status bar area for Safari */
-html::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 50px;
-  background: var(--bg-deep);
-  z-index: 999;
-  pointer-events: none;
+  scroll-padding-top: 72px;
 }
 
 body {
@@ -67,6 +55,7 @@ body {
   color: var(--text);
   line-height: 1.7;
   overflow-x: hidden;
+  padding-top: 72px;
 }
 
 /* --- Noise / Grain Texture Overlay ---
@@ -542,7 +531,6 @@ body {
   display: flex;
   align-items: center;
   position: relative;
-  padding-top: var(--nav-height);
   overflow: hidden;
 }
 
