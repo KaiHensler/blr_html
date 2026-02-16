@@ -99,6 +99,42 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
+  /* -----------------------------------------------------------------------
+     COUNTER ANIMATION — Animate percentage numbers counting up
+     ----------------------------------------------------------------------- */
+  const statNumbers = document.querySelectorAll('.card-stat');
+  if (statNumbers.length > 0) {
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+          entry.target.classList.add('counted');
+          const target = parseInt(entry.target.textContent);
+          const duration = 500; // 0.5s
+          const start = performance.now();
+
+          const animate = (currentTime) => {
+            const elapsed = currentTime - start;
+            const progress = Math.min(elapsed / duration, 1);
+            const current = Math.floor(progress * target);
+            entry.target.textContent = current + '%';
+
+            if (progress < 1) {
+              requestAnimationFrame(animate);
+            } else {
+              entry.target.textContent = target + '%';
+            }
+          };
+
+          requestAnimationFrame(animate);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    statNumbers.forEach(stat => counterObserver.observe(stat));
+  }
+
+
 
 
   /* -----------------------------------------------------------------------
