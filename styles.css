@@ -308,13 +308,12 @@ a:hover { color: #fff; }
    NAVIGATION
    ========================================================================== */
 .nav {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: var(--nav-height);
   z-index: 1000;
-  transition: background 0.2s ease-out, box-shadow 0.2s ease-out;
 }
 
 /* Glowing accent line at bottom when scrolled */
