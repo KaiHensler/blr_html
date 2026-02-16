@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
      Add class "reveal" to any element you want to animate in.
      Parent grids with "stagger-children" class get staggered delays via CSS.
      ----------------------------------------------------------------------- */
-  const revealElements = document.querySelectorAll('.reveal');
+  const revealElements = document.querySelectorAll('.reveal, .reveal-left');
   if (revealElements.length > 0) {
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -142,17 +142,19 @@ document.addEventListener('DOMContentLoaded', () => {
      HERO PARALLAX — Move grid and orbs at different speeds on scroll
      ----------------------------------------------------------------------- */
   const heroGrid = document.querySelector('.hero-grid');
-  const heroOrbs = document.querySelectorAll('.hero .uv-orb');
 
   if (heroGrid) {
+    let parallaxTicking = false;
     window.addEventListener('scroll', () => {
-      const y = window.scrollY;
-      if (y < window.innerHeight) {
-        heroGrid.style.transform = `translateY(${y * 0.15}px)`;
-        heroOrbs.forEach((orb, i) => {
-          const speed = 0.08 + i * 0.04;
-          orb.style.transform += ''; /* Orbs already have CSS animation, parallax handled there */
+      if (!parallaxTicking) {
+        requestAnimationFrame(() => {
+          const y = window.scrollY;
+          if (y < window.innerHeight) {
+            heroGrid.style.transform = `translateY(${y * 0.15}px)`;
+          }
+          parallaxTicking = false;
         });
+        parallaxTicking = true;
       }
     }, { passive: true });
   }

@@ -153,7 +153,7 @@ a:hover { color: #fff; }
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: gradientShift 6s ease-in-out infinite;
+  animation: gradientShift 4s ease-in-out infinite;
 }
 
 /* Animated gradient shift for glow-text */
@@ -201,7 +201,7 @@ a:hover { color: #fff; }
   opacity: 0.12;
   pointer-events: none;
   z-index: 0;
-  animation: orbFloat 12s ease-in-out infinite;
+  animation: orbFloat 20s ease-in-out infinite;
 }
 
 /* Slow floating animation for UV orbs */
@@ -213,7 +213,7 @@ a:hover { color: #fff; }
 
 /* Orbs with existing transforms need a different animation */
 .uv-orb[style*="translateY"] {
-  animation: orbFloatY 12s ease-in-out infinite;
+  animation: orbFloatY 20s ease-in-out infinite;
 }
 
 @keyframes orbFloatY {
@@ -223,7 +223,7 @@ a:hover { color: #fff; }
 }
 
 .uv-orb[style*="translate(-50%"] {
-  animation: orbFloatCenter 12s ease-in-out infinite;
+  animation: orbFloatCenter 20s ease-in-out infinite;
 }
 
 @keyframes orbFloatCenter {
@@ -305,7 +305,7 @@ a:hover { color: #fff; }
   height: 18px;
   transition: transform 0.15s ease-out;
 }
-.btn:hover svg { transform: translateX(3px); }
+.btn:hover svg { transform: translateX(6px); }
 
 
 /* ==========================================================================
@@ -454,24 +454,25 @@ a:hover { color: #fff; }
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Mobile menu overlay */
+/* Mobile menu overlay — uses visibility instead of display for smooth exit */
 .mobile-menu {
-  display: none;
   position: fixed;
   inset: 0;
   background: rgba(6, 6, 12, 0.97);
   backdrop-filter: blur(20px);
   z-index: 999;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 32px;
   opacity: 0;
-  transition: opacity 0.2s ease-out;
+  visibility: hidden;
+  transition: opacity 0.2s ease-out, visibility 0.2s;
 }
 .mobile-menu.open {
-  display: flex;
-  animation: fadeIn 0.3s ease forwards;
+  opacity: 1;
+  visibility: visible;
 }
 @keyframes fadeIn {
   from { opacity: 0; }
@@ -950,6 +951,11 @@ body {
 .comparison-col {
   padding: 32px 24px;
   background: var(--bg-elevated);
+  transition: background 0.2s ease-out;
+}
+
+.comparison-col:not(.highlighted):hover {
+  background: var(--bg-surface);
 }
 
 .comparison-col:first-child {
@@ -1161,6 +1167,12 @@ body {
   position: relative;
   z-index: 1;
   box-shadow: 0 0 30px rgba(124, 92, 252, 0.15);
+  transition: box-shadow 0.2s ease-out, border-color 0.2s ease-out;
+}
+
+.step:hover .step-number {
+  box-shadow: 0 0 40px rgba(124, 92, 252, 0.35);
+  border-color: var(--accent-bright);
 }
 
 .step-content {
@@ -1315,6 +1327,12 @@ body {
 
 .faq-answer > div {
   overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+}
+
+.faq-item.open .faq-answer > div {
+  opacity: 1;
 }
 
 .faq-item.open .faq-answer {
@@ -1679,14 +1697,33 @@ body {
   transform: translateY(0);
 }
 
+/* Slide-in from left variant for timeline elements */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.4s ease-out, transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 /* Staggered reveal for cards within grids.
    Each child gets an increasing delay so they appear one after another */
 .stagger-children .reveal:nth-child(1) { transition-delay: 0s; }
-.stagger-children .reveal:nth-child(2) { transition-delay: 0.1s; }
-.stagger-children .reveal:nth-child(3) { transition-delay: 0.2s; }
-.stagger-children .reveal:nth-child(4) { transition-delay: 0.3s; }
-.stagger-children .reveal:nth-child(5) { transition-delay: 0.4s; }
-.stagger-children .reveal:nth-child(6) { transition-delay: 0.5s; }
+.stagger-children .reveal:nth-child(2) { transition-delay: 0.06s; }
+.stagger-children .reveal:nth-child(3) { transition-delay: 0.12s; }
+.stagger-children .reveal:nth-child(4) { transition-delay: 0.18s; }
+.stagger-children .reveal:nth-child(5) { transition-delay: 0.24s; }
+.stagger-children .reveal:nth-child(6) { transition-delay: 0.3s; }
+
+/* Fast cascade for FAQ items */
+.faq-list .faq-item.reveal:nth-child(1) { transition-delay: 0s; }
+.faq-list .faq-item.reveal:nth-child(2) { transition-delay: 0.04s; }
+.faq-list .faq-item.reveal:nth-child(3) { transition-delay: 0.08s; }
+.faq-list .faq-item.reveal:nth-child(4) { transition-delay: 0.12s; }
+.faq-list .faq-item.reveal:nth-child(5) { transition-delay: 0.16s; }
+.faq-list .faq-item.reveal:nth-child(6) { transition-delay: 0.2s; }
 
 
 /* ==========================================================================
