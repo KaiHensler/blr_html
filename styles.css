@@ -1080,11 +1080,15 @@ body {
   border-color: transparent;
 }
 
+.solution-card .card-icon svg {
+  color: #fbbf24;
+}
+
 .solution-card .card-icon {
   width: 56px;
   height: 56px;
   border-radius: 14px;
-  background: rgba(124, 92, 252, 0.12);
+  background: rgba(251, 191, 36, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1094,7 +1098,7 @@ body {
 }
 
 .solution-card:hover .card-icon {
-  box-shadow: 0 0 24px rgba(124, 92, 252, 0.2);
+  box-shadow: 0 0 24px rgba(251, 191, 36, 0.2);
 }
 
 .solution-card h3 {
@@ -1398,11 +1402,8 @@ body {
 
 .footer-inner {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr;
   gap: 48px;
-  padding-bottom: 32px;
-  border-bottom: 1px solid rgba(255,255,255,0.04);
-  margin-bottom: 24px;
 }
 
 .footer-brand p {
