@@ -526,12 +526,13 @@ body {
    HERO SECTION
    ========================================================================== */
 .hero {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
+  padding-top: calc(var(--nav-height) + 20px);
 }
 
 /* Animated grid background with parallax (JS moves this) */
