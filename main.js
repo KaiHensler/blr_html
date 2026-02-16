@@ -99,6 +99,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
+
+
   /* -----------------------------------------------------------------------
      HERO PARALLAX — Move grid and orbs at different speeds on scroll
      ----------------------------------------------------------------------- */
@@ -201,26 +203,68 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (hasErrors) return;
 
-      /* TODO: Replace this with your actual form submission endpoint
-         For example: fetch('/api/contact', { method: 'POST', body: formData }) */
-
-      /* Show success feedback */
+      /* Submit to webhook */
       const submitBtn = contactForm.querySelector('.form-submit');
       const originalText = submitBtn.innerHTML;
-      submitBtn.innerHTML = '<span style="color:#fff">Nachricht gesendet!</span>';
-      submitBtn.style.background = '#06d6a0';
+      submitBtn.innerHTML = '<span style="color:#fff">Wird gesendet...</span>';
       submitBtn.disabled = true;
 
-      setTimeout(() => {
-        submitBtn.innerHTML = originalText;
-        submitBtn.style.background = '';
-        submitBtn.disabled = false;
-        contactForm.reset();
-        /* Clear validation states */
-        contactForm.querySelectorAll('.form-group').forEach(g => {
-          g.classList.remove('valid', 'invalid');
+      /* Send as form-urlencoded format */
+      const formBody = Object.keys(data)
+        .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+        .join('&');
+
+      fetch('https://hook.eu2.make.com/4ohht2g27czd4r8zxoak9ckb28dwaknd', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'x-make-apikey': 'Webhook_API_key'
+        },
+        body: formBody
+      })
+      .then(response => {
+        /* Make.com webhooks typically return 200 even for successful submissions */
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+        /* Try to parse JSON, but don't fail if response is empty */
+        return response.text().then(text => {
+          try {
+            return text ? JSON.parse(text) : {};
+          } catch (e) {
+            return { raw: text };
+          }
         });
-      }, 3000);
+      })
+      .then(result => {
+        /* Show success feedback */
+        console.log('Form submitted successfully:', result);
+        submitBtn.innerHTML = '<span style="color:#fff">Nachricht gesendet!</span>';
+        submitBtn.style.background = '#06d6a0';
+
+        setTimeout(() => {
+          submitBtn.innerHTML = originalText;
+          submitBtn.style.background = '';
+          submitBtn.disabled = false;
+          contactForm.reset();
+          /* Clear validation states */
+          contactForm.querySelectorAll('.form-group').forEach(g => {
+            g.classList.remove('valid', 'invalid');
+          });
+        }, 3000);
+      })
+      .catch(error => {
+        /* Show error feedback */
+        console.error('Form submission error:', error);
+        submitBtn.innerHTML = '<span style="color:#fff">Fehler beim Senden. Bitte versuche es erneut.</span>';
+        submitBtn.style.background = '#ff4757';
+
+        setTimeout(() => {
+          submitBtn.innerHTML = originalText;
+          submitBtn.style.background = '';
+          submitBtn.disabled = false;
+        }, 3000);
+      });
     });
   }
 

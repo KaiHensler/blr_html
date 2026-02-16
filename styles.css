@@ -527,11 +527,11 @@ body {
    HERO SECTION
    ========================================================================== */
 .hero {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: center;
   position: relative;
-  padding-top: var(--nav-height);
   overflow: hidden;
 }
 
@@ -588,6 +588,10 @@ body {
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-badge {
@@ -642,8 +646,8 @@ body {
   align-items: center;
   justify-content: center;
   gap: 40px;
-  margin-top: 64px;
-  padding-top: 32px;
+  margin-top: 48px;
+  padding-top: 24px;
   border-top: 1px solid rgba(124, 92, 252, 0.1);
   flex-wrap: wrap;
 }
@@ -667,7 +671,7 @@ body {
 .scroll-indicator {
   display: flex;
   justify-content: center;
-  margin-top: 64px;
+  margin-top: 48px;
   animation: scrollBounce 2.5s infinite;
 }
 
@@ -696,13 +700,93 @@ body {
 
 
 /* ==========================================================================
-   PROBLEM SECTION
+   PROBLEM EVOLUTION SECTION
+   ========================================================================== */
+.problem-evolution {
+  max-width: 640px;
+  margin: 56px auto 0;
+  position: relative;
+}
+
+.evolution-line {
+  position: absolute;
+  top: 0;
+  left: 16px;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--text-dim), var(--accent), var(--glow-cyan));
+  opacity: 0.3;
+}
+
+.evolution-step {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  padding-bottom: 40px;
+  position: relative;
+}
+
+.evolution-step:last-child {
+  padding-bottom: 0;
+}
+
+.evolution-marker {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.evolution-marker.past {
+  background: var(--bg-elevated);
+  border: 2px solid var(--text-dim);
+}
+
+.evolution-marker.now {
+  background: rgba(6, 214, 160, 0.1);
+  border: 2px solid var(--glow-cyan);
+  box-shadow: 0 0 20px rgba(6, 214, 160, 0.4);
+}
+
+.evolution-content {
+  padding-top: 4px;
+}
+
+.evolution-era {
+  display: inline-block;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+  margin-bottom: 6px;
+}
+
+.evolution-step:last-child .evolution-era {
+  color: var(--glow-cyan);
+}
+
+.evolution-content p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.evolution-step:last-child .evolution-content p {
+  color: var(--text);
+}
+
+
+/* ==========================================================================
+   AGITATE / PAIN POINTS SECTION
    ========================================================================== */
 .problem-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  margin-top: 48px;
+  margin-top: 32px;
 }
 
 /* Cards with gradient border on hover (pseudo-element technique) */
@@ -736,6 +820,13 @@ body {
   box-shadow: 0 8px 30px rgba(0,0,0,0.2);
 }
 
+.problem-card .card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
 .problem-card .card-icon {
   width: 48px;
   height: 48px;
@@ -745,7 +836,14 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 1.4rem;
-  margin-bottom: 20px;
+}
+
+.problem-card .card-stat {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #ff5252;
+  line-height: 1;
 }
 
 .problem-card h3 {
@@ -919,21 +1017,36 @@ body {
 
 .solution-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
   margin-top: 48px;
 }
 
-/* Solution cards with gradient border hover */
+/* Solution cards with gradient top accent + glow hover */
 .solution-card {
   background: var(--bg-elevated);
-  border: 1px solid rgba(124, 92, 252, 0.1);
+  border: 1px solid rgba(124, 92, 252, 0.08);
   border-radius: var(--radius);
-  padding: 36px 28px;
-  transition: all 0.3s;
+  padding: 40px 32px;
+  transition: all 0.4s ease;
   position: relative;
+  overflow: hidden;
 }
 
+/* Gradient accent line at top of card */
+.solution-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--glow-cyan));
+  opacity: 0.5;
+  transition: opacity 0.4s;
+}
+
+/* Gradient border on hover */
 .solution-card::before {
   content: '';
   position: absolute;
@@ -945,28 +1058,37 @@ body {
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 0.4s;
   pointer-events: none;
 }
 .solution-card:hover::before {
   opacity: 0.6;
 }
+.solution-card:hover::after {
+  opacity: 1;
+}
 
 .solution-card:hover {
-  box-shadow: 0 0 40px rgba(124, 92, 252, 0.08);
-  transform: translateY(-4px);
+  box-shadow: 0 8px 40px rgba(124, 92, 252, 0.12), 0 0 80px rgba(124, 92, 252, 0.05);
+  transform: translateY(-6px);
+  border-color: transparent;
 }
 
 .solution-card .card-icon {
-  width: 52px;
-  height: 52px;
+  width: 56px;
+  height: 56px;
   border-radius: 14px;
   background: rgba(124, 92, 252, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
+  transition: box-shadow 0.4s;
+}
+
+.solution-card:hover .card-icon {
+  box-shadow: 0 0 24px rgba(124, 92, 252, 0.2);
 }
 
 .solution-card h3 {
@@ -976,36 +1098,45 @@ body {
 
 
 /* ==========================================================================
-   PROCESS / HOW IT WORKS
+   PROCESS / HOW IT WORKS — Vertical Timeline
    ========================================================================== */
-.process-steps {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  margin-top: 56px;
+.process-timeline {
+  max-width: 640px;
+  margin: 56px auto 0;
   position: relative;
 }
 
-/* Connecting line between steps */
-.process-steps::before {
+/* Vertical connecting line */
+.process-timeline::before {
   content: '';
   position: absolute;
-  top: 40px;
-  left: 16.66%;
-  right: 16.66%;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent), var(--glow-cyan), var(--accent));
+  top: 0;
+  left: 28px;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--accent), var(--glow-cyan), var(--accent));
   opacity: 0.2;
 }
 
-.step {
-  text-align: center;
+.process-timeline .step {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
   position: relative;
+  padding-bottom: 48px;
+}
+
+.process-timeline .step:last-child {
+  padding-bottom: 0;
+}
+
+.step-marker {
+  flex-shrink: 0;
 }
 
 .step-number {
-  width: 64px;
-  height: 64px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   background: var(--bg-elevated);
   border: 2px solid var(--accent);
@@ -1013,18 +1144,26 @@ body {
   align-items: center;
   justify-content: center;
   font-family: 'Outfit', sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 800;
   color: var(--accent-bright);
-  margin: 0 auto 24px;
   position: relative;
   z-index: 1;
   box-shadow: 0 0 30px rgba(124, 92, 252, 0.15);
 }
 
-.step h3 {
+.step-content {
+  padding-top: 12px;
+}
+
+.step-content h3 {
   color: #fff;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
+}
+
+.step-content p {
+  font-size: 0.95rem;
+  line-height: 1.7;
 }
 
 
@@ -1188,14 +1327,9 @@ body {
   overflow: hidden;
 }
 
-.final-cta-box {
+.final-cta-content {
   position: relative;
   z-index: 1;
-  background: var(--bg-elevated);
-  border: 1px solid rgba(124, 92, 252, 0.15);
-  border-radius: 20px;
-  padding: 72px 48px;
-  box-shadow: 0 0 80px rgba(124, 92, 252, 0.06);
 }
 
 .final-cta h2 { margin-bottom: 16px; }
@@ -1283,26 +1417,21 @@ body {
 }
 
 .footer-bottom {
-  margin-top: 48px;
-  padding-top: 24px;
-  border-top: 1px solid rgba(255,255,255,0.04);
+  padding: 24px 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  font-size: 0.8rem;
-  color: var(--text-dim);
-  flex-wrap: wrap;
-  gap: 12px;
+  gap: 32px;
+  font-size: 0.85rem;
 }
 
-.footer-bottom-links {
-  display: flex;
-  gap: 24px;
+.footer-bottom a {
+  color: var(--text-muted);
+  transition: color 0.2s;
 }
 
-.footer-bottom-links a {
-  color: var(--text-dim);
-  font-size: 0.8rem;
+.footer-bottom a:hover {
+  color: var(--accent-bright);
 }
 
 
@@ -1552,8 +1681,11 @@ body {
   .section { padding: 90px 0; }
 
   .problem-grid,
-  .solution-grid,
   .testimonial-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .solution-grid {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -1563,12 +1695,6 @@ body {
   }
 
   .comparison-col:first-child { display: none; }
-
-  .agitation-content {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
 
   .footer-inner {
     grid-template-columns: 1fr 1fr;
@@ -1592,20 +1718,16 @@ body {
 
   .problem-grid,
   .solution-grid,
-  .process-steps,
   .testimonial-grid {
     grid-template-columns: 1fr;
   }
 
-  .process-steps::before { display: none; }
 
   .comparison-table {
     grid-template-columns: 1fr;
   }
 
-  .agitation-stats {
-    grid-template-columns: 1fr 1fr;
-  }
+  .comparison-col:first-child { display: block; }
 
   .form-row {
     grid-template-columns: 1fr;
@@ -1621,10 +1743,6 @@ body {
     text-align: center;
   }
 
-  .final-cta-box {
-    padding: 48px 24px;
-  }
-
   .back-to-top {
     bottom: 20px;
     right: 20px;
@@ -1635,5 +1753,4 @@ body {
 
 @media (max-width: 480px) {
   .container { padding: 0 16px; }
-  .agitation-stats { grid-template-columns: 1fr; }
 }
