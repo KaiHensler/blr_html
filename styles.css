@@ -142,6 +142,10 @@ a:hover { color: #fff; }
 .text-center { text-align: center; }
 .mx-auto { margin-left: auto; margin-right: auto; }
 
+.section-alt {
+  background: var(--bg-primary);
+}
+
 /* --- Glow Effects (the "black light" UV aesthetic) --- */
 .glow-text {
   background: linear-gradient(135deg, #a78bfa 0%, #7c5cfc 50%, #06d6a0 100%);
@@ -949,7 +953,7 @@ body {
 }
 
 .comparison-col:first-child {
-  background: transparent;
+  background: var(--bg-elevated);
 }
 
 /* Highlighted column with "Empfohlen" badge */
@@ -1337,6 +1341,12 @@ body {
 .final-cta h2 { margin-bottom: 16px; }
 .final-cta p { margin: 0 auto 36px; }
 
+.cta-reassurance {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-top: 16px;
+}
+
 
 /* ==========================================================================
    BACK TO TOP BUTTON
@@ -1388,8 +1398,11 @@ body {
 
 .footer-inner {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   gap: 48px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  margin-bottom: 24px;
 }
 
 .footer-brand p {

@@ -18,7 +18,7 @@
     h1,h2,h3,h4{font-family:'Outfit',system-ui,sans-serif;font-weight:700;line-height:1.15;letter-spacing:-.02em}
     h1{font-size:clamp(2.4rem,5.5vw,4rem)}
     a{color:var(--accent-bright);text-decoration:none}
-    .nav{position:fixed;top:0;left:0;width:100%;height:var(--nav-height);z-index:1000}
+    .nav{position:absolute;top:0;left:0;width:100%;height:var(--nav-height);z-index:1000}
     .nav-inner{display:flex;align-items:center;justify-content:space-between;height:100%;max-width:1200px;margin:0 auto;padding:0 24px}
     .nav-logo{display:flex;align-items:center;gap:10px;font-family:'Outfit',sans-serif;font-weight:800;font-size:1.25rem;color:#fff;text-decoration:none}
     .nav-links{display:flex;align-items:center;gap:36px;list-style:none}
@@ -50,6 +50,9 @@
         Black Light Results
       </a>
       <ul class="nav-links">
+        <li><a href="#solution">Lösung</a></li>
+        <li><a href="#process">Ablauf</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="contact.html" class="btn btn-primary nav-cta">Projekt starten</a></li>
       </ul>
       <!-- Mobile hamburger (animates to X via CSS + JS) -->
@@ -61,6 +64,9 @@
 
   <!-- Mobile menu overlay -->
   <div class="mobile-menu">
+    <a href="#solution">Lösung</a>
+    <a href="#process">Ablauf</a>
+    <a href="#faq">FAQ</a>
     <a href="contact.html">Projekt starten</a>
   </div>
 
@@ -88,7 +94,7 @@
         <h1>Deine Website verliert jeden Tag <span class="glow-text">Kunden.</span></h1>
 
         <p class="hero-sub">
-          Wir bauen dir in 1 Woche eine Website, die verkauft — nicht nur gut aussieht. Mit AI-gestütztem Webdesign und Fokus auf Marketing statt Design-Spielereien.
+          In 1 Woche eine Website, die verkauft — nicht nur gut aussieht.
         </p>
 
         <div class="hero-ctas">
@@ -116,11 +122,11 @@
         </div>
 
         <!-- Scroll indicator -->
-        <div class="scroll-indicator">
+        <a href="#problem" class="scroll-indicator">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="6 9 12 15 18 9"></polyline>
           </svg>
-        </div>
+        </a>
       </div>
     </div>
   </section>
@@ -181,7 +187,7 @@
   <!-- ====================================================================
        AGITATE SECTION — Pain points with stats
        ==================================================================== -->
-  <section class="section">
+  <section class="section section-alt">
     <div class="container">
       <div class="text-center reveal">
         <span class="section-label">Das bedeutet</span>
@@ -268,7 +274,7 @@
           <h3>Black Light Results</h3>
           <div class="comparison-row"><span class="check">✓</span> Premium-Design</div>
           <div class="comparison-row"><span class="check">✓</span> 100% Conversion-Fokus</div>
-          <div class="comparison-row"><span class="check">✓</span> Faire, transparente Preise</div>
+          <div class="comparison-row"><span class="check">✓</span> Ab 1.000 € — faire Festpreise</div>
           <div class="comparison-row"><span class="check">✓</span> Fertig in 1 Woche</div>
           <div class="comparison-row"><span class="check">✓</span> Marketing + Design + AI</div>
         </div>
@@ -360,7 +366,7 @@
        Handle objections before they become reasons not to buy.
        FAQ answers wrapped in <div> for smooth grid-based height animation.
        ==================================================================== -->
-  <section id="faq" class="section">
+  <section id="faq" class="section section-alt">
     <div class="container">
       <div class="text-center reveal">
         <span class="section-label">Häufige Fragen</span>
@@ -376,7 +382,7 @@
           </button>
           <div class="faq-answer">
             <div>
-              <p>Das hängt vom Umfang ab. Wir bieten transparente Festpreise — keine versteckten Kosten. Im kostenlosen Erstgespräch bekommst du ein konkretes Angebot. Unsere Preise liegen deutlich unter denen klassischer Agenturen, weil wir durch AI effizienter arbeiten.</p>
+              <p>Unsere Websites starten ab 1.000 €. Der genaue Preis hängt vom Umfang ab — immer als transparenter Festpreis, keine versteckten Kosten. Im kostenlosen Erstgespräch bekommst du ein konkretes Angebot. Unsere Preise liegen deutlich unter denen klassischer Agenturen, weil wir durch AI effizienter arbeiten.</p>
             </div>
           </div>
         </div>
@@ -460,6 +466,7 @@
           Jetzt kostenlos beraten lassen
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
+        <p class="cta-reassurance">Antwort innerhalb von 24 Stunden.</p>
       </div>
     </div>
   </section>
@@ -470,6 +477,21 @@
        ==================================================================== -->
   <footer class="footer">
     <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <span class="logo-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><defs><linearGradient id="logoGrad2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7c5cfc"/><stop offset="100%" stop-color="#06d6a0"/></linearGradient></defs><path d="M240,128l-48,40H64L16,128,64,88H192Z" opacity="0.2" fill="url(#logoGrad2)"/><path d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z" fill="url(#logoGrad2)"/></svg></span>
+            Black Light Results
+          </a>
+          <p>AI-gestütztes Webdesign für kleine Unternehmen. Schnell, effektiv, bezahlbar.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <ul>
+            <li><a href="mailto:info@blacklightresults.com">info@blacklightresults.com</a></li>
+          </ul>
+        </div>
+      </div>
       <div class="footer-bottom">
         <a href="imprint.html">Impressum</a>
         <a href="privacy.html">Datenschutz</a>
