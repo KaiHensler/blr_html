@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
           entry.target.classList.add('counted');
           const target = parseInt(entry.target.textContent);
-          const duration = 500; // 0.5s
+          const duration = 500; // 1s
           const start = performance.now();
 
           const animate = (currentTime) => {
@@ -133,6 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     statNumbers.forEach(stat => counterObserver.observe(stat));
   }
+
 
 
 
@@ -330,11 +331,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (href && href.endsWith('.html') && !href.startsWith('http') && !href.startsWith('#')) {
       link.addEventListener('click', (e) => {
         e.preventDefault();
-        document.body.style.transition = 'opacity 0.25s ease';
+        document.body.style.transition = 'opacity 0.15s ease-out';
         document.body.style.opacity = '0';
         setTimeout(() => {
           window.location.href = href;
-        }, 250);
+        }, 150);
       });
     }
   });
