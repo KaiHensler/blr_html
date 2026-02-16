@@ -59,46 +59,82 @@
 
   <!-- Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Black Light Results",
-    "url": "https://blacklightresults.com",
-    "description": "AI-gestütztes Webdesign für kleine Unternehmen. Professionelle Website in 1 Woche.",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Paul-Münch-Str. 14",
-      "addressLocality": "Ludwigshafen am Rhein",
-      "postalCode": "67071",
-      "addressCountry": "DE"
-    },
-    "telephone": "+4917634667013",
-    "email": "kai@blacklightresults.com",
-    "priceRange": "ab €1.000",
-    "areaServed": {
-      "@type": "Country",
-      "name": "DE"
-    },
-    "founder": {
-      "@type": "Person",
-      "name": "Kai Hensler"
-    },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Webdesign-Services",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "AI-gestütztes Webdesign",
-            "description": "Conversion-optimierte Websites für kleine Unternehmen, fertig in 1 Woche."
-          }
-        }
-      ]
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Black Light Results",
+  "url": "https://blacklightresults.com",
+  "logo": "https://blacklightresults.com/favicon.svg",
+  "image": "https://blacklightresults.com/og-image.png",
+  "description": "AI-gestütztes Webdesign für kleine Unternehmen. Professionelle Websites in 1 Woche – 100% digital und deutschlandweit.",
+  "publicAccess": false,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Paul-Münch-Str. 14",
+    "addressLocality": "Ludwigshafen am Rhein",
+    "addressRegion": "Rheinland-Pfalz",
+    "postalCode": "67071",
+    "addressCountry": "DE"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 49.4719,
+    "longitude": 8.3975
+  },
+  "telephone": "+4917634667013",
+  "email": "kai@blacklightresults.com",
+  "priceRange": "€€",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+      ],
+      "opens": "08:00",
+      "closes": "20:00"
     }
+  ],
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Ludwigshafen am Rhein"
+    },
+    {
+      "@type": "City",
+      "name": "Mannheim"
+    },
+    {
+      "@type": "Country",
+      "name": "Germany"
+    }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Webdesign Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Digitales Webdesign & AI-Entwicklung",
+          "description": "Conversion-optimierte Websites für kleine Unternehmen, 100% remote Zusammenarbeit."
+        }
+      }
+    ]
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Kai Hensler"
+  },
+  "knowsAbout": ["Webdesign", "AI Automation", "Local SEO", "Conversion Optimization"],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+4917634667013",
+    "contactType": "customer service",
+    "availableLanguage": ["German", "English"]
   }
-  </script>
+}
+</script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
