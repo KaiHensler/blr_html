@@ -333,11 +333,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (href && href.endsWith('.html') && !href.startsWith('http') && !href.startsWith('#')) {
       link.addEventListener('click', (e) => {
         e.preventDefault();
-        document.body.style.transition = 'opacity 0.15s ease-out';
+        document.body.style.transition = 'opacity 0.1s ease-out';
         document.body.style.opacity = '0';
         setTimeout(() => {
           window.location.href = href;
-        }, 150);
+        }, 100);
       });
     }
   });
