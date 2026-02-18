@@ -1875,11 +1875,6 @@ body {
     justify-content: center;
   }
 
-  .footer-medal {
-    width: 48px;
-    height: 48px;
-  }
-
   .footer-links {
     flex-direction: row;
     align-items: center;
