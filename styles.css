@@ -1802,11 +1802,11 @@ a:hover { color: #fff; }
 
   .comparison-table {
     grid-template-columns: 1fr;
-    width: 90%;
+    width: 100%;
   }
 
   .comparison-col {
-    padding: 48px 44px;
+    padding: 40px 32px;
   }
 
 
