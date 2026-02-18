@@ -951,13 +951,14 @@ a:hover { color: #fff; }
    COMPARISON / WHY OTHERS FAIL
    ========================================================================== */
 .comparison-table {
-  margin-top: 48px;
+  margin: 48px auto 0;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, max-content);
   gap: 0;
   border-radius: var(--radius);
   overflow: hidden;
   border: 1px solid rgba(255,255,255,0.06);
+  width: fit-content;
 }
 
 .comparison-col {
@@ -966,45 +967,14 @@ a:hover { color: #fff; }
   transition: background 0.2s ease-out;
 }
 
-.comparison-col:not(.highlighted):hover {
+.comparison-col:hover {
   background: var(--bg-surface);
-}
-
-.comparison-col:first-child {
-  background: var(--bg-elevated);
-}
-
-/* Highlighted column with "Empfohlen" badge */
-.comparison-col.highlighted {
-  background: rgba(124, 92, 252, 0.08);
-  border: 2px solid rgba(124, 92, 252, 0.3);
-  border-radius: var(--radius);
-  position: relative;
-}
-
-.comparison-badge {
-  position: absolute;
-  top: -1px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(135deg, var(--accent), var(--glow-cyan));
-  color: #fff;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 5px 16px;
-  border-radius: 0 0 8px 8px;
 }
 
 .comparison-col h3 {
   color: #fff;
   margin-bottom: 24px;
   font-size: 1.1rem;
-}
-
-.comparison-col.highlighted h3 {
-  color: var(--accent-bright);
 }
 
 .comparison-row {
@@ -1800,13 +1770,6 @@ a:hover { color: #fff; }
     grid-template-columns: 1fr 1fr;
   }
 
-  .comparison-table {
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-
-  .comparison-col:first-child { display: none; }
-
   .footer-content {
     gap: 32px;
   }
@@ -1837,12 +1800,15 @@ a:hover { color: #fff; }
     grid-template-columns: 1fr;
   }
 
-
   .comparison-table {
     grid-template-columns: 1fr;
+    width: 90%;
   }
 
-  .comparison-col:first-child { display: block; }
+  .comparison-col {
+    padding: 48px 44px;
+  }
+
 
   .form-row {
     grid-template-columns: 1fr;
