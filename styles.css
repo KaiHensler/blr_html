@@ -1491,8 +1491,11 @@ body {
 
 .footer-medal {
   width: 72px;
-  height: auto;
+  height: 72px;
   opacity: 0.6;
+  transform: translateZ(0);
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
 .footer-links {
@@ -1858,16 +1861,23 @@ body {
 
   .footer-content {
     flex-direction: column;
+    align-items: center;
     gap: 24px;
     margin-bottom: 24px;
   }
 
   .footer-brand {
     max-width: 100%;
+    text-align: center;
   }
 
   .footer-logo {
-    justify-content: flex-start;
+    justify-content: center;
+  }
+
+  .footer-medal {
+    width: 48px;
+    height: 48px;
   }
 
   .footer-links {
