@@ -1834,8 +1834,8 @@ a:hover { color: #fff; }
   .nav-hamburger { display: flex; }
 
   .hero { min-height: auto; padding-top: 120px; padding-bottom: 60px; }
-  .hero h1 { font-size: clamp(2rem, 7vw, 2.8rem); margin-bottom: 12px; margin-left: 8px; margin-right: 8px; }
-  .hero-sub { font-size: 1.05rem; margin-bottom: 28px; margin-left: 8px; margin-right: 8px; }
+  .hero h1 { font-size: clamp(2rem, 7vw, 2.8rem); margin-bottom: 12px; margin-left: 0; margin-right: 0; }
+  .hero-sub { font-size: 1.05rem; margin-bottom: 28px; margin-left: 0; margin-right: 0; }
 
   .trust-bar { gap: 24px; }
 
