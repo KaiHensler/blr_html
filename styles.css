@@ -809,68 +809,113 @@ a:hover { color: #fff; }
 /* Cards with gradient border on hover (pseudo-element technique) */
 .problem-card {
   background: var(--bg-elevated);
-  border: 1px solid rgba(255,255,255,0.04);
+  border: 1px solid rgba(255, 82, 82, 0.08);
   border-radius: var(--radius);
-  padding: 36px 28px;
-  transition: border-color 0.2s ease-out, transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.2s ease-out;
+  padding: 32px;
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
+
+/* Background accent stripe */
+.problem-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(255, 82, 82, 0.4) 0%, rgba(255, 82, 82, 0.1) 100%);
+  opacity: 0.5;
+  transition: opacity 0.2s ease-out;
+}
+
 .problem-card::before {
   content: '';
   position: absolute;
   inset: -1px;
   border-radius: var(--radius);
   padding: 1px;
-  background: linear-gradient(135deg, var(--accent), var(--glow-cyan));
+  background: linear-gradient(135deg, #ff5252, rgba(255, 82, 82, 0.2));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   opacity: 0;
   transition: opacity 0.2s ease-out;
   pointer-events: none;
 }
+
 .problem-card:hover::before {
-  opacity: 0.5;
+  opacity: 0.1;
 }
+
+.problem-card:hover::after {
+  opacity: 0.8;
+}
+
 .problem-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 24px rgba(255, 82, 82, 0.08);
+  border-color: rgba(255, 82, 82, 0.15);
+}
+
+.problem-card h3 {
+  color: #fff;
+  font-size: 1.3rem;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
 }
 
 .problem-card .card-top {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 20px;
+  gap: 16px;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
 }
 
 .problem-card .card-icon {
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
   border-radius: 12px;
-  background: rgba(255, 82, 82, 0.1);
+  background: rgba(255, 82, 82, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 82, 82, 0.12);
+  transition: all 0.2s ease-out;
+}
+
+.problem-card:hover .card-icon {
+  background: rgba(255, 82, 82, 0.12);
+  box-shadow: 0 0 12px rgba(255, 82, 82, 0.1);
 }
 
 .problem-card .card-stat {
   font-family: 'Outfit', sans-serif;
-  font-size: 2.4rem;
+  font-size: 3.2rem;
   font-weight: 800;
   color: #ff5252;
   line-height: 1;
-}
-
-.problem-card h3 {
-  color: #fff;
-  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  margin: 0;
 }
 
 .problem-card p {
   font-size: 0.95rem;
   line-height: 1.65;
+  color: var(--text-muted);
+  position: relative;
+  z-index: 1;
 }
 
 
